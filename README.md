@@ -99,5 +99,4 @@ GitHut Repo: https://github.com/Hari612k/EPLQ.git
 
 ## Live Demo
 
-GitHub Pages:
-Netlify:
+GitHub Pages: https://hari612k.github.io/EPLQ/
