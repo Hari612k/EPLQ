@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EPLQ: Efficient Privacy-Preserving Location-Based Query</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+  <nav id="navbar" style="display:none;">
+    <ul>
+      <li><a href="#" onclick="showSection('home')">Home</a></li>
+      <li id="admin-nav" style="display:none;"><a href="#" onclick="showSection('admin')">Admin Dashboard</a></li>
+      <li id="user-nav" style="display:none;"><a href="#" onclick="showSection('user')">User Dashboard</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li>
+      <li><button id="themeToggleButton" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div id="home-section">
+      <h1>EPLQ System</h1>
+      <p>Efficient Privacy-Preserving Location-Based Query over Encrypted Data.</p>
+    </div>
+
+    <div id="auth-section">
+      <h2>Register</h2>
+      <input type="email" id="reg-email" placeholder="Email" required>
+      <input type="password" id="reg-password" placeholder="Password" required>
+      <select id="reg-role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button id="registerBtn" onclick="register()">Register</button>
+
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <div class="row">
+        <button id="loginBtn" onclick="login()">Login</button>
+        <button id="forgotBtn" class="secondary" onclick="forgotPassword()">Forgot Password</button>
+      </div>
+    </div>
+
+    <div id="admin-section" style="display:none;">
+      <h2>Admin: Upload POI Data</h2>
+      <input type="text" id="poi-name" placeholder="POI Name" required>
+      <input type="number" id="poi-x" placeholder="X Coordinate" required>
+      <input type="number" id="poi-y" placeholder="Y Coordinate" required>
+      <button id="uploadBtn" onclick="uploadPOI()">Upload</button>
+      <div id="admin-loading" class="loader" style="display:none;"></div>
+    </div>
+
+    <div id="user-section" style="display:none;">
+      <h2>User: Search POIs</h2>
+      <input type="number" id="query-x" placeholder="Your X Coordinate" required>
+      <input type="number" id="query-y" placeholder="Your Y Coordinate" required>
+      <input type="number" id="query-radius" placeholder="Radius" required>
+      <button id="searchBtn" onclick="searchPOIs()">Search</button>
+      <div id="user-loading" class="loader" style="display:none;"></div>
+      <div id="results"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
