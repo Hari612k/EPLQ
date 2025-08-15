@@ -70,29 +70,6 @@ Each action writes to `logs` with fields:
 - Theme persistence across reloads
 - Logs written for all actions
 
-## Deployment
-
-- Firebase Hosting or Netlify
-- Add deployed URL to Firebase Auth Authorized Domains
-
-## Screenshots (add after testing)
-
-- Registration
-- Login
-- Admin Upload
-- User Search and Results
-- Firestore collections: `users`, `pois`, `logs`
-
-## Architecture (add a simple block diagram)
-
-User ↔ Firebase Auth ↔ Firestore (`pois`, `users`, `logs`) ↔ Client AES decrypt & range filter
-
-## Limitations & Future Scope
-
-- Demo secret key is static; move key management to secure storage for production.
-- Add pagination and map visualization.
-- Add server-side functions for audit exports of logs.
-
 ## Repo
 
 GitHut Repo: https://github.com/Hari612k/EPLQ.git
