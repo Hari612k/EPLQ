@@ -77,3 +77,7 @@ GitHut Repo: https://github.com/Hari612k/EPLQ.git
 ## Live Demo
 
 GitHub Pages: https://hari612k.github.io/EPLQ/
+
+Project Console: https://console.firebase.google.com/project/eplq-ac071/overview
+
+Hosting URL: https://eplq-ac071.web.app
